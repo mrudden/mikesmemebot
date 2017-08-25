@@ -2,11 +2,19 @@
 
 from datetime import *
 
+test_mode = False
+
 today = datetime.today()
 day_of_the_week = today.weekday()
 day_of_the_month = today.day
 this_month = today.month
 this_year = today.year
+
+
+#Test Zone
+if test_mode:
+    this_month = 9
+    day_of_the_month = 1
 
 if day_of_the_week == 0:
     day_of_the_week = "Sunday"
@@ -16,7 +24,6 @@ elif day_of_the_week == 2:
     day_of_the_week = "Tuesday"
 elif day_of_the_week == 3:
     day_of_the_week = "Wednesday"
-    print("It is Wednesday my dudes")
 elif day_of_the_week == 4:
     day_of_the_week = "Thursday"
 elif day_of_the_week == 5:
@@ -48,3 +55,13 @@ elif this_month == 11:
     this_month = "November"
 elif this_month == 12:
     this_month = "December"
+
+print("------\n#dailyupdate\n------")
+if day_of_the_week == 'Wednesday':
+    print("It is Wednesday my dudes")
+
+print("------\n#monthlyupdate\n------")
+if (this_month == 'September') and (day_of_the_month == 1):
+    print("Wake me up when September ends")
+elif (this_month == 'September') and (day_of_the_month == 30):
+    print("Okay Mr. Greenday you can wake up now!")
