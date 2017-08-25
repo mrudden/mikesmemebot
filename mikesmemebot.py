@@ -9,7 +9,7 @@ api = twitter.Api(consumer_key=key1,
                   access_token_key=key2,
                   access_token_secret=secret2)
 
-test_mode = True
+test_mode = False
 
 today = datetime.today()
 day_of_the_week = today.weekday()
@@ -97,7 +97,7 @@ print(daily_update)
 try:
     status = api.PostUpdate(daily_update)
 except:
-    print("didn't work")
+    print("*~didn't work~*")
 
 print("\n\n------\n#monthlyupdate\n------\n")
 if (this_month == 'September') and (day_of_the_month == 1):
@@ -105,6 +105,7 @@ if (this_month == 'September') and (day_of_the_month == 1):
 elif (this_month == 'September') and (day_of_the_month == 30):
     print("Okay Mr. Greenday you can wake up now!")
 
+text_to_post = "test post please ignore #please"
 meme_to_post = meme_path + meme_file
-status = api.PostMedia("test post please ignore #please", meme_to_post)
+status = api.PostMedia(text_to_post, meme_to_post)
 #status = api.PostUpdate("I am become twitter bot, destroyer of worlds")
